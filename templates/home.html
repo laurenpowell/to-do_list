@@ -1,0 +1,23 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="row homepage  text-center g-3" >
+        
+        {% if user.is_authenticated %}
+        <h2> Welcome {{ user.username }}! </h2>
+            <h4>What tasks shall we conquer today?</h4>
+            <p><a href="{% url 'logout' %}">Log Out</a></p>
+        {% else %}
+            <h2>Welcome</h2>
+            <h4>Please Login or Sign up</h4>
+        
+            <div class=" btn-toolbar ">
+                <a href="{% url 'signup'  %}" class="btn btn-info mr-1 ">Sign Up</a>
+                <a href="{% url 'login' %}" class="btn btn-info mr-1">Log In</a>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

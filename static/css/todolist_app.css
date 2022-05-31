@@ -1,0 +1,37 @@
+.homepage{
+    margin-top: 50px;
+}
+.login-form{
+    padding: 30px 30px 30px 30px;
+    text-align: center;
+}
+.login-form h2{
+    text-decoration: underline;
+}
+
+.signup-form{
+    padding: 30px 30px 30px 30px;
+}
+.signup-form h2{
+    text-decoration: underline;
+}
+
+.password-reset{
+    padding: 30px 30px 30px 30px;
+}
+
+
+.card {
+    width: 70%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px 10px 20px 10px;
+}
+
+.task-details{
+    padding-inline-start: 20px;
+}
+.btn-toolbar{
+    margin-top: 50px;
+    justify-content: center;
+}
