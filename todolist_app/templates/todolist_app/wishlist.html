@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block nav_item_wishlist %}active{% endblock nav_item_wishlist %} 
+{% block content %}
+<div class="row justify-content-center">
+    <h1> Wishlists </h1>
+    <div class="row justify-content-center">
+        {%for titlelist in task_list_wishlist %}
+            <div class="card text-white bg-secondary" >
+                <div class="card-header text-center">
+                    <h3 class="card-title">
+                        <p><a href="{% url 'list-detail' pk=titlelist.pk %}" class="text-light">
+                            {{ titlelist }}
+                        </a></p>
+                        <a href="{% url 'task-add'  titlelist.id %}" class="btn text-dark bg-light ">Add Item</a>
+                    </h3>
+                </div>
+            {%for tasks in titlelist.taskitem_set.all %}
+                <ul class="list-group">
+                    <li class="list-group-item" > 
+                        <strong>{{tasks}}</strong>
+                        <p class="task-details">
+                            Due Date: {{tasks.due_date| date:"l, F j"}}<br>
+                            Description: {{tasks.description}}
+                        </p>
+                    </li>
+                </ul>    
+            {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

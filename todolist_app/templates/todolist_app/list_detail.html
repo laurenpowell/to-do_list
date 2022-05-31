@@ -1,0 +1,37 @@
+{% extends "base.html" %} 
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="btn-toolbar justify-content-center">
+        
+    </div>
+    <div class="card text-white bg-secondary" >
+        <div class="card-header text-center">
+            <h3 class="card-title" >
+                <p class="text-light"> {{ object.title }} </p>
+                <p>
+                    <a href="{% url 'list-edit' pk=object.pk %}" class="btn btn-warning ">Edit</a>
+                    <a href="{% url 'list-delete' object.id %}" class="btn  btn-danger" >Delete</a>
+                </p>
+            </h3>
+        </div>
+        {%for tasks in object.taskitem_set.all %}
+            <ul class="list-group">
+                <li class="list-group-item" > 
+                    <strong>{{tasks}}</strong>
+                    <p class="task-details">
+                        Due Date: {{tasks.due_date | date:"l, F j"}}<br>
+                        Description: {{tasks.description}}
+                    </p>
+                    <p>
+                        
+                        <a href="{% url 'task-edit'  tasks.id %}" class="btn btn-warning ">Edit</a>
+                        <a href="{% url 'task-delete' object.id tasks.id  %}" class="btn btn-danger ">Delete</a>
+                    </p>
+                </li>
+            </ul>    
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
