@@ -29,7 +29,7 @@ SECRET_KEY = str(os.environ.get('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['to-do-list-lash.herokuapp.com','localhost']
+ALLOWED_HOSTS = ['simple-todolist-tracker.herokuapp.com','localhost']
 
 
 # Application definition
