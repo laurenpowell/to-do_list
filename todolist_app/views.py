@@ -126,6 +126,7 @@ class ListEdit(LoginRequiredMixin, UpdateView):
     fields = ["category", "title",]
     template_name = "todolist_app/list_edit.html"
     
+    
     def get_success_url(self):
         return self.request.GET.get('next', reverse('todo'))
 
@@ -136,8 +137,8 @@ class ListEdit(LoginRequiredMixin, UpdateView):
 
 class TaskEdit(LoginRequiredMixin, UpdateView):
     model = TaskItem
-    fields = ['todo_list', 'title', 'description', "due_date"]
     template_name = "todolist_app/task_edit.html"
+    form_class = TaskItemForm
 
     def get_success_url(self):
         return self.request.GET.get('next', reverse('todo'))

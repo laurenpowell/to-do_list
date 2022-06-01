@@ -5,10 +5,10 @@
     <div class="btn-toolbar justify-content-center">
         
     </div>
-    <div class="card text-white bg-secondary" >
+    <div class="card bg-info" >
         <div class="card-header text-center">
             <h3 class="card-title" >
-                <p class="text-light"> {{ object.title }} </p>
+                <p class="text-dark"> {{ object.title }} </p>
                 <p>
                     <a href="{% url 'list-edit' pk=object.pk %}" class="btn btn-warning ">Edit</a>
                     <a href="{% url 'list-delete' object.id %}" class="btn  btn-danger" >Delete</a>

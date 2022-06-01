@@ -5,7 +5,7 @@
 <h3>{{ title }}</h3>
 <form method="post">
     {% csrf_token %}
-    <div class="mx-5" style="width: 400px;">
+    <div class="mx-5" style="width: 300px;">
         {{ form|crispy }}
     <input
         value="Submit"
@@ -13,7 +13,7 @@
     <input
         value="Cancel"
         type="button"
-        onclick="location.href='{% url "list-detail" object.pk %}'">
+        onclick="location.href='{% url "list-detail" todo_list.pk %}'">
 </form>
 </div>
 {% endblock %}
