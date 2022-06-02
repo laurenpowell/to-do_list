@@ -1,3 +1,7 @@
+a:visited{
+    color: black !important;
+}
+
 .homepage{
     margin-top: 50px;
 }
@@ -20,6 +24,10 @@
     padding: 30px 30px 30px 30px;
 }
 
+.navbar a:visited{
+    color: black !important;
+}
+
 .page-header {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -35,7 +43,10 @@
 .task-details{
     padding-inline-start: 20px;
 }
+
 .btn-toolbar{
     margin-top: 50px;
     justify-content: center;
 }
+
+
